@@ -1,0 +1,99 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Lot numéro {{ beer.batch }}</h2>
+      <table class="table table-striped">
+        <tr><td>Type de bière <span class="glyphicon glyphicon-question-sign" aria-hidden="true" ng-click="open('type')"></span></td><td>{{beer.type}}</td></tr>
+        <tr><td>Date de brassage</td><td>{{ beer.brew_date | date:"dd/MM/yyyy"}}</td></tr>
+        <tr><td>Date d'embouteillage</td><td>{{beer.bottle_date | date:"dd/MM/yyyy"}}</td></tr>
+        <tr><td>Quantité totale</td><td>{{beer.final_quantity}} Litres</td></tr>
+        <tr><td>Gravité originale <span class="glyphicon glyphicon-question-sign" aria-hidden="true" ng-click="open('og')"></span></td><td>{{beer.og}} {{convertToPlato(beer.og)}}</td></tr>
+        <tr><td>Gravité finale <span class="glyphicon glyphicon-question-sign" aria-hidden="true" ng-click="open('fg')"></span></td><td>{{beer.fg}} {{convertToPlato(beer.fg)}}</td></tr>
+        <tr><td>Alc. Vol. <span class="glyphicon glyphicon-question-sign" aria-hidden="true" ng-click="open('alc')"></span></td><td>{{beer.alc_vol}}</td></tr>
+        <tr><td>IBU <span class="glyphicon glyphicon-question-sign" aria-hidden="true" ng-click="open('ibu')"></span></td><td>{{beer.ibu}}</td></tr>
+        <tr><td>EBC <span class="glyphicon glyphicon-question-sign" aria-hidden="true" ng-click="open('ebc')"></span></td><td>{{beer.ebc}}</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>Angular Fullstack v2.0.13 |
+      <a href="https://twitter.com/thefabricdotcom">@thefabricdotcom</a></p>
+  </div>
+</footer>
+
+<script type="text/ng-template" id="type">
+    <div class="modal-header">
+        <h3 class="modal-title">Type de Bière</h3>
+    </div>
+    <div class="modal-body">
+        <a href="https://fr.wikipedia.org/wiki/Classification_des_bi%C3%A8res" target="_blank">Plus d'information sur la page Wikipedia</a>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="og">
+    <div class="modal-header">
+        <h3 class="modal-title">Gravité Originale</h3>
+    </div>
+    <div class="modal-body">
+        <a href="https://fr.wikipedia.org/wiki/Classification_des_bi%C3%A8res" target="_blank">Plus d'information sur la page Wikipedia</a>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="fg">
+    <div class="modal-header">
+        <h3 class="modal-title">Gravité Finale</h3>
+    </div>
+    <div class="modal-body">
+        <a href="https://fr.wikipedia.org/wiki/Classification_des_bi%C3%A8res" target="_blank">Plus d'information sur la page Wikipedia</a>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="ibu">
+    <div class="modal-header">
+        <h3 class="modal-title">IBU</h3>
+    </div>
+    <div class="modal-body">
+        <a href="https://fr.wikipedia.org/wiki/Classification_des_bi%C3%A8res" target="_blank">Plus d'information sur la page Wikipedia</a>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="ebc">
+    <div class="modal-header">
+        <h3 class="modal-title">EBC</h3>
+    </div>
+    <div class="modal-body">
+        <a href="https://fr.wikipedia.org/wiki/Classification_des_bi%C3%A8res" target="_blank">Plus d'information sur la page Wikipedia</a>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="alc">
+    <div class="modal-header">
+        <h3 class="modal-title">Alc. Vol.</h3>
+    </div>
+    <div class="modal-body">
+        <a href="https://fr.wikipedia.org/wiki/Classification_des_bi%C3%A8res" target="_blank">Plus d'information sur la page Wikipedia</a>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+    </div>
+</script>

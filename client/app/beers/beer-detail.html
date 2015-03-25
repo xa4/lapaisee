@@ -1,0 +1,69 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>{{ beer.name }}</h2>
+      <form class="beer-form">
+        <div class="form-group">
+          <label for="batch">Batch number</label>
+          <input type="text" id="batch" ng-model="beer.batch" ng-disabled="true">
+        </div>
+        <div class="form-group">
+          <label for="type">Beer type</label>
+          <input type="text" class="form-control" id="type" placeholder="type" ng-model="beer.type">
+        </div>
+        <div class="form-group">
+          <label for="brew_date">Brew date</label>
+          <p class="input-group">
+            <input id="brew_date" type="text" class="form-control" datepicker-popup="{{format}}" is-open="opened1" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" ng-model="beer.brew_date"/>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open($event,'opened1')"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+        <div class="form-group">
+          <label for="bottle_date">Bottle date</label>
+          <p class="input-group">
+            <input type="text" class="form-control" datepicker-popup="{{format}}" is-open="opened2" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" ng-model="beer.bottle_date"/>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="open($event,'opened2')"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+        <div class="form-group">
+          <label for="final_quantity">Final quantity</label>
+          <input type="text" class="form-control" id="final_quantity" placeholder="Final quantity" ng-model="beer.final_quantity">
+        </div>
+        <div class="form-group">
+          <label for="og">Original Gravity</label>
+          <input type="text" class="form-control" id="og" placeholder="OG" ng-model="beer.og">
+        </div>
+        <div class="form-group">
+          <label for="fg">Final Gravity</label>
+          <input type="text" class="form-control" id="fg" placeholder="FG" ng-model="beer.fg">
+        </div>
+        <div class="form-group">
+          <label for="alc_vol">Alc. Vol.</label>
+          <input type="text" class="form-control" id="alc_vol" placeholder="Alc. Vol." ng-model="beer.alc_vol">
+        </div>
+        <div class="form-group">
+          <label for="ibu">IBU</label>
+          <input type="text" class="form-control" id="ibu" placeholder="IBU" ng-model="beer.ibu">
+        </div>
+        <div class="form-group">
+          <label for="ebc">EBC</label>
+          <input type="text" class="form-control" id="ebc" placeholder="EBC" ng-model="beer.ebc">
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="updateBeer()">Update</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>Angular Fullstack v2.0.13 |
+      <a href="https://twitter.com/thefabricdotcom">@thefabricdotcom</a></p>
+  </div>
+</footer>

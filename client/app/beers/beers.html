@@ -1,0 +1,29 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Features:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="beer in beers">
+        <li><a href="/beers/{{ beer._id }}" tooltip="{{beer.batch}}">{{beer.batch}}<button type="button" class="close" ng-click="deleteBeer(beer)">&times;</button></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <form class="beer-form">
+    <label>Batch number</label>
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Add a new beer batch here." ng-model="newBeer.batch">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="addBeer()">Add New Beer</button>
+      </span>
+    </p>
+  </form>
+</div>
+
+<footer class="footer">
+  <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/thefabricdotcom">@thefabricdotcom</a></p>
+  </div>
+</footer>
